@@ -1,0 +1,14 @@
+version: "3"
+services:
+  node-express-hello-world:
+    container_name: node-express-hello-world
+    image: odjhey/node-express-hello-world:latest
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "node server.js"
+    ports:
+      - "3090:8080"
+    environment:
+      PORT: "8080"
